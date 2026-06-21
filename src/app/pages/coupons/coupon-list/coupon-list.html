@@ -1,0 +1,48 @@
+<div class="page-header">
+
+    <h1>Coupons</h1>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Coupon Code</th>
+                <th>Discount</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let coupon of coupons">
+
+                <td>{{ coupon.code }}</td>
+
+                <td>{{ coupon.discount }}%</td>
+
+                <td>
+
+                    <button
+                        class="delete-btn"
+                        (click)="deleteCoupon(coupon._id)"
+                    >
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

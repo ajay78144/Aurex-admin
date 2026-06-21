@@ -1,0 +1,60 @@
+<div class="page-header">
+
+    <h1>Products</h1>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let product of products">
+
+                <td>{{product.name}}</td>
+
+                <td>₹{{product.price}}</td>
+
+                <td>{{product.category?.name}}</td>
+
+                <td class="action-buttons">
+
+                    <button
+                        class="edit-btn"
+                        [routerLink]="['/products/edit', product._id]">
+
+                        Edit
+
+                    </button>
+
+                    <button
+                        class="delete-btn"
+                        (click)="deleteProduct(product._id)">
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

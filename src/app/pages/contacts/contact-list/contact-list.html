@@ -1,0 +1,51 @@
+<div class="page-header">
+
+    <h1>Contact Messages</h1>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let contact of contacts">
+
+                <td>{{contact.name}}</td>
+
+                <td>{{contact.email}}</td>
+
+                <td>{{contact.message}}</td>
+
+                <td>
+
+                    <button
+                        class="delete-btn"
+                        (click)="deleteContact(contact._id)"
+                    >
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

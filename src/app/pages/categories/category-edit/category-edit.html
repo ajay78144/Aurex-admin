@@ -1,0 +1,46 @@
+<div class="form-container">
+
+    <h1>Edit Category</h1>
+
+    <form>
+
+        <input
+          type="text"
+          [(ngModel)]="category.name"
+          name="name"
+          placeholder="Category Name"
+        >
+
+        <textarea
+          [(ngModel)]="category.description"
+          name="description"
+          placeholder="Description"
+        ></textarea>
+
+        <input
+          type="text"
+          [(ngModel)]="category.image"
+          name="image"
+          placeholder="Image URL"
+        >
+
+        <div
+          class="image-preview"
+          *ngIf="category.image"
+        >
+          <img
+            [src]="category.image"
+            alt="Category"
+          >
+        </div>
+
+        <button
+          type="button"
+          (click)="updateCategory()"
+        >
+          Update Category
+        </button>
+
+    </form>
+
+</div>

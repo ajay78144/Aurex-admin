@@ -1,0 +1,61 @@
+<div class="form-container">
+
+    <h1>Add Banner</h1>
+
+    <form>
+
+        <input
+            type="text"
+            placeholder="Banner Title"
+            [(ngModel)]="banner.title"
+            name="title"
+        >
+
+        <input
+            type="text"
+            placeholder="Banner Image URL"
+            [(ngModel)]="banner.image"
+            name="image"
+        >
+
+        <div
+            class="preview"
+            *ngIf="banner.image"
+        >
+
+            <img
+                [src]="banner.image"
+                alt="Banner Preview"
+            >
+
+        </div>
+
+        <input
+            type="text"
+            placeholder="Banner Link"
+            [(ngModel)]="banner.link"
+            name="link"
+        >
+
+        <label class="checkbox">
+
+            <input
+                type="checkbox"
+                [(ngModel)]="banner.active"
+                name="active"
+            >
+
+            Active Banner
+
+        </label>
+
+        <button
+            type="button"
+            (click)="addBanner()"
+        >
+            Add Banner
+        </button>
+
+    </form>
+
+</div>

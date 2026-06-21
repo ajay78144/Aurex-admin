@@ -1,0 +1,91 @@
+<div class="page-header">
+
+    <h1>Banners</h1>
+
+    <button
+        routerLink="/banners/add"
+        class="add-btn">
+        + Add Banner
+    </button>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Link</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let banner of banners">
+
+                <td>
+                    <img
+                        [src]="banner.image"
+                        alt="Banner"
+                        class="banner-img">
+                </td>
+
+                <td>{{ banner.title }}</td>
+
+                <td>
+                    <a
+                        [href]="banner.link"
+                        target="_blank">
+                        {{ banner.link }}
+                    </a>
+                </td>
+
+                <td>
+                    <span
+                        class="active"
+                        *ngIf="banner.active">
+                        Active
+                    </span>
+
+                    <span
+                        class="inactive"
+                        *ngIf="!banner.active">
+                        Inactive
+                    </span>
+                </td>
+
+                <td>
+                    {{ banner.createdAt | date:'dd/MM/yyyy' }}
+                </td>
+
+                <td>
+
+                    <button
+                        class="edit-btn"
+                        [routerLink]="['/banners/edit', banner._id]">
+                        Edit
+                    </button>
+
+                    <button
+                        class="delete-btn"
+                        (click)="deleteBanner(banner._id)">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

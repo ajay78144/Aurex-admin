@@ -1,0 +1,61 @@
+<div class="form-container">
+
+    <h1>Add Product</h1>
+
+    <form>
+
+        <input
+          type="text"
+          placeholder="Product Name"
+          [(ngModel)]="product.name"
+          name="name"
+        >
+
+        <textarea
+          placeholder="Description"
+          [(ngModel)]="product.description"
+          name="description"
+        ></textarea>
+
+        <input
+          type="number"
+          placeholder="Price"
+          [(ngModel)]="product.price"
+          name="price"
+        >
+
+        <input
+          type="text"
+          placeholder="Image URL"
+          [(ngModel)]="product.image"
+          name="image"
+        >
+
+        <select
+          [(ngModel)]="product.category"
+          name="category"
+        >
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option
+              *ngFor="let category of categories"
+              [value]="category._id"
+            >
+              {{ category.name }}
+            </option>
+
+        </select>
+
+        <button
+          type="button"
+          (click)="addProduct()"
+        >
+          Add Product
+        </button>
+
+    </form>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="form-container">
+
+    <h1>Add Category</h1>
+
+    <form>
+
+        <input
+          type="text"
+          placeholder="Category Name"
+          [(ngModel)]="category.name"
+          name="name"
+        >
+
+        <textarea
+          placeholder="Description"
+          [(ngModel)]="category.description"
+          name="description"
+        ></textarea>
+
+        <input
+          type="text"
+          placeholder="Image URL"
+          [(ngModel)]="category.image"
+          name="image"
+        >
+
+        <div
+          class="image-preview"
+          *ngIf="category.image"
+        >
+          <img
+            [src]="category.image"
+            alt="Category"
+          >
+        </div>
+
+        <button
+          type="button"
+          (click)="addCategory()"
+        >
+          Add Category
+        </button>
+
+    </form>
+
+</div>

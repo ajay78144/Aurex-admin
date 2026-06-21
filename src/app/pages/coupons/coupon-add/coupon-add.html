@@ -1,0 +1,30 @@
+<div class="form-container">
+
+    <h1>Add Coupon</h1>
+
+    <form>
+
+        <input
+            type="text"
+            placeholder="Coupon Code"
+            [(ngModel)]="coupon.code"
+            name="code"
+        >
+
+        <input
+            type="number"
+            placeholder="Discount %"
+            [(ngModel)]="coupon.discount"
+            name="discount"
+        >
+
+        <button
+            type="button"
+            (click)="addCoupon()"
+        >
+            Add Coupon
+        </button>
+
+    </form>
+
+</div>

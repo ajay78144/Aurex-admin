@@ -1,0 +1,51 @@
+<div
+    class="overlay"
+    *ngIf="isSidebarOpen"
+    (click)="closeMenu()">
+</div>
+
+<div
+    class="sidebar"
+    [class.active]="isSidebarOpen">
+
+    <h2 class="logo">Aurex Admin</h2>
+
+    <ul>
+
+        <li><a routerLink="/dashboard" (click)="closeMenu()">Dashboard</a></li>
+
+        <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
+
+        <li><a routerLink="/products/add" (click)="closeMenu()">Add Product</a></li>
+
+        <li><a routerLink="/categories" (click)="closeMenu()">Categories</a></li>
+
+        <li><a routerLink="/categories/add" (click)="closeMenu()">Add Category</a></li>
+
+        <li><a routerLink="/orders" (click)="closeMenu()">Orders</a></li>
+
+        <li><a routerLink="/users" (click)="closeMenu()">Users</a></li>
+
+        <li><a routerLink="/cart" (click)="closeMenu()">Cart</a></li>
+
+        <li><a routerLink="/reviews" (click)="closeMenu()">Reviews</a></li>
+
+        <li><a routerLink="/coupons" (click)="closeMenu()">Coupons</a></li>
+
+        <li><a routerLink="/coupons/add" (click)="closeMenu()">Add Coupon</a></li>
+
+        <li><a routerLink="/banners" (click)="closeMenu()">Banners</a></li>
+
+        <li><a routerLink="/banners/add" (click)="closeMenu()">Add Banner</a></li>
+
+        <li><a routerLink="/contacts" (click)="closeMenu()">Contacts</a></li>
+
+        <li><a routerLink="/profile" (click)="closeMenu()">Profile</a></li>
+
+        <li><a routerLink="/settings" (click)="closeMenu()">Settings</a></li>
+
+        <li><a routerLink="/" (click)="closeMenu()">Logout</a></li>
+
+    </ul>
+
+</div>
