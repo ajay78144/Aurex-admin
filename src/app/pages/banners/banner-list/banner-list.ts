@@ -64,3 +64,4 @@ export class BannerList implements OnInit {
   }
 
 }
+

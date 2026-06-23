@@ -3,27 +3,29 @@
     <div class="left">
 
         <button
+            *ngIf="!sidebarOpen"
             class="menu-btn"
-            (click)="onToggleSidebar()"
-        >
+            (click)="onToggleSidebar()">
+
             <span class="menu-icon">☰</span>
-            <span class="menu-text">Menu</span>
+
+            <span class="menu-text">
+                Menu
+            </span>
+
         </button>
 
     </div>
 
     <div class="center">
-
         <h2>Aurex Admin</h2>
-
     </div>
 
     <div class="right">
 
         <button
             class="logout-btn"
-            (click)="logout()"
-        >
+            (click)="logout()">
             Logout
         </button>
 

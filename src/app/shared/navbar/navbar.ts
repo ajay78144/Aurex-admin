@@ -1,30 +1,33 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+Component,
+EventEmitter,
+Input,
+Output
+} from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: false,
-  templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+selector:'app-navbar',
+standalone:false,
+templateUrl:'./navbar.html',
+styleUrl:'./navbar.css'
 })
-export class Navbar {
 
-  @Output() toggleSidebar = new EventEmitter<void>();
+export class Navbar{
 
-  constructor(
-    private router: Router
-  ) {}
+@Input() sidebarOpen=false;
 
-  onToggleSidebar() {
-    this.toggleSidebar.emit();
-  }
+@Output() toggleSidebar=new EventEmitter<void>();
 
-  logout() {
+onToggleSidebar(){
 
-    localStorage.removeItem('token');
+this.toggleSidebar.emit();
 
-    this.router.navigate(['/']);
+}
 
-  }
+logout(){
+
+localStorage.removeItem("token");
+
+}
 
 }
